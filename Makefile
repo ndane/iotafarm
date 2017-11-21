@@ -10,4 +10,4 @@ all:
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(BUILD_DIR)/$(OUT)
 
 clean:
-	rm -rf build
+	rm -rf $(BUILD_DIR)
