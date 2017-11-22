@@ -39,14 +39,14 @@ void seed() {
 
 void trytes() {
     int trit[3] = { 0, 0, 0 };
-    char *tryte = trytescnv(trit, 1);
+    char *tryte = tritsToTrytes(trit, 1);
 
     printf("%s", tryte);
 }
 
 void trits() {
     char *tryte = "A";
-    int **trit = tritscnv(tryte, strlen(tryte));
+    int **trit = trytesToTrits(tryte, strlen(tryte));
 
     printf("{%i, %i, %i}", trit[0][0], trit[0][1], trit[0][2]);
 }

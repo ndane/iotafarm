@@ -42,7 +42,7 @@ int trytesTrits[27][3] = {
     {-1,  0,  0}
 };
 
-int** tritscnv(char *trytes, int len) {
+int** trytesToTrits(char *trytes, int len) {
     int **trits = (int **)malloc(sizeof(int **) * len);
 
     for (int i = 0; i < len; i++) {
@@ -61,7 +61,7 @@ int** tritscnv(char *trytes, int len) {
     return trits;
 }
 
-char* trytescnv(int *trits, int len) {
+char* tritsToTrytes(int *trits, int len) {
     char *trytes = (char *)malloc(sizeof(char *) * len);
 
     for (int i = 0; i < len; i += 3) {
