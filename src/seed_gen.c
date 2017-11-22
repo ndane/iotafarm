@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "ccurl.h"
+
 #define seedErrInBounds 0
 #define seedErrOutOfBounds 1
 
