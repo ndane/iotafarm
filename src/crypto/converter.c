@@ -46,13 +46,16 @@ int** tritscnv(char *trytes, int len) {
     int **trits = (int **)malloc(sizeof(int **) * len);
 
     for (int i = 0; i < len; i++) {
-        int index = (int)strchr(trytesAlphabet, (int)trytes[i]);
+        for (int j = 0; j < strlen(trytesAlphabet); j++) {
+            if (trytesAlphabet[j] == trytes[i]) {
+                int trit[3] = { 
+                     trytesTrits[j][0], trytesTrits[j][1], trytesTrits[j][2] 
+                };
 
-        int trit[3] = {
-            trytesTrits[index][0], trytesTrits[index][1], trytesTrits[index][2]
-        };
-
-        trits[i * 3] = trit;
+                trits[i * 3] = trit;
+                break;
+            }
+        }
     }
 
     return trits;
