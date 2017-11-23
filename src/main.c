@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ccurl/curl.h>
 
 #include "seed_gen.h"
 #include "crypto/converter.h"
@@ -9,8 +10,15 @@ void seed();
 void trytes();
 void trits();
 
+curl_t *curlCtx;
+
 int main(int argc, char **argv) {
-    if (argc == 1) {
+    // Init
+    init_curl(curlCtx);
+    //curlCtx = (curl_t *)malloc(sizeof(curl_t *));
+    //init_curl(curlCtx);
+
+    if (argc == 1) { 
         seed();
     }
 

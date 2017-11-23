@@ -1,0 +1,22 @@
+include(ExternalProject)
+
+ExternalProject_Add(
+  ccurl
+
+  GIT_REPOSITORY "git@github.com:iotaledger/ccurl.git"
+  GIT_TAG "master"
+  GIT_SUBMODULES "deps/libopencl-stub"
+  SOURCE_DIR "${CMAKE_SOURCE_DIR}/libs/ccurl"
+
+  INSTALL_COMMAND ""
+  BINARY_DIR "${CMAKE_SOURCE_DIR}/build/ccurl"
+  
+)
+
+set(ccurl_INCLUDE_DIRS 
+  ${PROJECT_SOURCE_DIR}/libs/ccurl/src/lib
+  ${PROJECT_SOURCE_DIR}/libs/ccurl/src/lib/claccess
+  ${PROJECT_SOURCE_DIR}/libs/ccurl/src/lib/util  
+)
+
+set(ccurl_LIBRARIES ${GLOBAL_OUTPUT_PATH}/ccurl/libccurl.a)
